@@ -1,0 +1,16 @@
+{
+  "name": "nodejs",
+  "version": "0.1.0",
+  "description": "NodeJS client for Zeebe",
+  "main": "zbc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ffi": "^2.2.0",
+    "ref-array": "^1.2.0",
+    "ref-struct": "^1.1.0"
+  }
+}
