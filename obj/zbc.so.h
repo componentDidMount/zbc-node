@@ -82,6 +82,14 @@ extern GoString InitClient(GoString p0);
 
 extern struct CreateTopic CreateTopic(GoString p0, GoInt p1, GoInt p2);
 
+extern void JobWorker(GoString p0, GoString p1, GoString p2, GoInt p3, GoInt p4);
+
+extern char* PollJob();
+
+extern void CompleteJob(char* p0);
+
+extern void FailJob(GoString p0);
+
 extern struct CreateTopic TopicInfo();
 
 #ifdef __cplusplus
