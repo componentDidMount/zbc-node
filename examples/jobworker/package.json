@@ -1,0 +1,9 @@
+{
+  "name": "jobworker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "zbc-nodejs": "file:../../"
+  }
+}
