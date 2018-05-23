@@ -1,8 +1,10 @@
 const { Client } = require("zbc-nodejs");
 
 var myClient = new Client();
-
+console.log("starting client")
 var success = myClient.connect({bootstrapAddr: "0.0.0.0:51015"});
+
+console.log(success)
 
 if (success) {
   myClient.job_worker("default-topic", "foo", {}, function(job) {
