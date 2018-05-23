@@ -71,7 +71,7 @@ extern char* CreateTopic(GoString p0, GoInt p1, GoInt p2);
 
 extern char* CreateWorkflow(GoString p0, GoString p1);
 
-extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt p2, GoInterface p3);
+extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt p2, GoString p3);
 
 extern void JobWorker(GoString p0, GoString p1, GoString p2, GoInt p3, GoInt p4);
 
