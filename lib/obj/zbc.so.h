@@ -17,17 +17,6 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 /* Start of preamble from import "C" comments.  */
 
 
-#line 3 "/Users/Sam/Go/src/github.com/zeebe-io/zbc-go/ffi/main.go"
-
-struct CreateTopic {
-	char* Error;
-	char* Name;
-	char* State;
-	int Partitions;
-	int ReplicationFactor;
-};
-
-#line 1 "cgo-generated-wrapper"
 
 
 /* End of preamble from import "C" comments.  */
@@ -76,21 +65,21 @@ extern "C" {
 #endif
 
 
-extern GoInt Add(GoInt p0, GoInt p1);
+extern char* InitClient(GoString p0);
 
-extern GoString InitClient(GoString p0);
+extern char* CreateTopic(GoString p0, GoInt p1, GoInt p2);
 
-extern struct CreateTopic CreateTopic(GoString p0, GoInt p1, GoInt p2);
+extern char* CreateWorkflow(GoString p0, GoString p1);
+
+extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt p2, GoInterface p3);
 
 extern void JobWorker(GoString p0, GoString p1, GoString p2, GoInt p3, GoInt p4);
 
-extern char* PollJob();
+extern char* PollJob(GoInt p0);
 
-extern void CompleteJob(char* p0);
+extern char* CompleteJob(char* p0);
 
-extern void FailJob(GoString p0);
-
-extern struct CreateTopic TopicInfo();
+extern char* FailJob(char* p0);
 
 #ifdef __cplusplus
 }
