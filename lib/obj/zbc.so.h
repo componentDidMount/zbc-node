@@ -67,19 +67,19 @@ extern "C" {
 
 extern char* InitClient(GoString p0);
 
-extern char* CreateTopic(GoString p0, GoInt p1, GoInt p2);
+extern char* CreateTopic(GoString p0, GoInt32 p1, GoInt32 p2);
 
 extern char* CreateWorkflow(GoString p0, GoString p1);
 
 extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt p2, GoString p3);
 
-extern void JobWorker(GoString p0, GoString p1, GoString p2, GoInt p3, GoInt p4);
+extern char* JobWorker(GoString p0, GoString p1, GoString p2, GoInt32 p3, GoInt32 p4);
 
-extern char* PollJob(GoInt p0);
+extern char* PollJob(GoInt32 p0);
 
-extern char* CompleteJob(char* p0);
+extern char* CompleteJob(GoString p0);
 
-extern char* FailJob(char* p0);
+extern char* FailJob(GoString p0);
 
 #ifdef __cplusplus
 }
