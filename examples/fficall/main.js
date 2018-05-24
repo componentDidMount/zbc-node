@@ -18,7 +18,7 @@ var zbc = ffi.Library("../../lib/obj/zbc.so", {
     CreateWorkflowInstance: ["string", [GoString, GoString, "int", GoString]],
     JobWorker: ["string", [GoString, GoString, GoString, "int", "int"]],
     PollJob: ["string", ["int"]],
-    CompleteJob: ["string", [GoString]],
+    CompleteJob: ["string", [GoString, GoString]],
     FailJob: ["string", [GoString]]
 });
 
@@ -35,7 +35,7 @@ console.log("FFI response: ", resp)
 console.log()
 
 console.log("Creating workflow: demoProcess")
-var createWorkflow  = "demoProcess.bpmn"
+var createWorkflow  = "../demoProcess.bpmn"
 var resp = zbc.CreateWorkflow(new GoString({p: topicName, n: topicName.length}), new GoString({p: createWorkflow, n: createWorkflow.length}))
 console.log("FFI response: ", resp)
 console.log()
@@ -72,9 +72,15 @@ console.log("FFI response: ", resp)
 console.log()
 
 var job = JSON.parse(resp)["data"]["jobs"][0]
-console.log("Completing a job with ID: ", job["jobKey"])
+var jobKey = job["jobKey"]
+var jobPayload = JSON.stringify(job["payload"])
+console.log("Completing a job with ID: ", jobKey)
+console.log(jobPayload)
+
+
 var completeRequest = JSON.stringify(JSON.parse(resp))
-var resp = zbc.CompleteJob(new GoString({p: completeRequest, n: completeRequest.length}))
+var resp = zbc.CompleteJob(new GoString({p: jobKey, n: jobKey.length}),
+                           new GoString({p: jobPayload, n: jobPayload.length}))
 console.log(resp)
 console.log()
 
@@ -84,9 +90,12 @@ var resp = zbc.PollJob(1)
 console.log("FFI response: ", resp)
 console.log()
 
-var job = JSON.parse(resp)["data"]["jobs"][0]
-console.log("Completing a job with ID: ", job["jobKey"])
+var jobKey = job["jobKey"]
+var jobPayload = job["payload"]
+console.log("Failing a job with ID: ", jobKey)
+console.log(jobPayload)
+
 var completeRequest = JSON.stringify(JSON.parse(resp))
-var resp = zbc.FailJob(new GoString({p: completeRequest, n: completeRequest.length}))
+var resp = zbc.FailJob(new GoString({p: jobKey, n: jobKey.length}))
 console.log(resp)
 console.log()

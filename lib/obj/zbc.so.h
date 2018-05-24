@@ -77,7 +77,7 @@ extern char* JobWorker(GoString p0, GoString p1, GoString p2, GoInt32 p3, GoInt3
 
 extern char* PollJob(GoInt32 p0);
 
-extern char* CompleteJob(GoString p0);
+extern char* CompleteJob(GoString p0, GoString p1);
 
 extern char* FailJob(GoString p0);
 
