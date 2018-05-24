@@ -1,11 +1,8 @@
 const { Client } = require("zbc-nodejs");
 
-const exampleClient = new Client();
+const exampleClient = new Client({bootstrapAddr: "0.0.0.0:51015"});
 
 console.log("starting client")
-
-const connectResult = exampleClient.connect({bootstrapAddr: "0.0.0.0:51015"});
-console.log("Connect Result", connectResult);
 
 const createWorkflowResult = exampleClient.createWorkflow("default-topic","demoProcess.bpmn");
 console.log("Create Workflow Result", createWorkflowResult);
