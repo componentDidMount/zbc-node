@@ -1,7 +1,6 @@
 {
   "extends": [
-    "plugin:bpmn-io/es6",
-    "plugin:prettier/recommended"
+    "standard"
   ],
   "env": {
       "node": true,

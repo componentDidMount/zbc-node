@@ -39,6 +39,7 @@ Install xcode from App app store.
 ## Installing
 
 ```js
+LDFLAGS="-Wl,-no_compact_unwind" npm install -s zbc-nodejs
 npm install -s zbc-nodejs
 ```
 
@@ -85,6 +86,9 @@ myClient.createWorkflowInstance("my-topic", "myProcess", -1, {});
 
 ```js
 var myClient = new Client({bootstrapAddr: "0.0.0.0:51015"});
+myClient.jobWorker("my-topic", "jobTypeXYZ", {}, function(jobKey, payload) {
+  // do something with the job
+});
 ```
 
 ### Complete Job
