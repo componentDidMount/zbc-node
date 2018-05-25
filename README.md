@@ -1,5 +1,8 @@
 # Zeebe NodeJs Client
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Build Status](https://travis-ci.org/zeebe/zbc-js.svg?branch=master)](https://travis-ci.org/zeebe/zbc-js)
+
 Use NodeJs with Zeebe.
 
 ## Prerequisites
@@ -125,13 +128,13 @@ Next, create a file, e.g. `deployWorkflow.js` and insert the following code:
 ```js
 const { Client } = require('zbc-nodejs')
 
-const myClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
+const zbClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
 
 // Create a new topic "get started" with one partition and replicationFactor 1
-myClient.createTopic('get-started', 1, 1)
+zbClient.createTopic('get-started', 1, 1)
 
 // Create our order workflow that we modeled above
-const createWorkflowResult = myClient.createWorkflow('get-started', 'order-process.bpmn')
+const createWorkflowResult = zbClient.createWorkflow('get-started', 'order-process.bpmn')
 console.log('Result', createWorkflowResult)
 ```
 

@@ -27,7 +27,7 @@ for (let i = 0; i < 100; i++) {
 
 let counter = 0
 console.log('starting job worker')
-myClient.jobWorker('default-topic', 'foo', {}, function (jobKey, payload) {
+myClient.jobWorker('hello-world', 'foo', {}, function (jobKey, payload) {
   counter++
 
   console.log()
