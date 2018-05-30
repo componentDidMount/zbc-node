@@ -1,5 +1,5 @@
 {
-  "name": "zbc-nodejs",
+  "name": "zbc-node",
   "version": "0.1.0",
   "description": "NodeJS client for Zeebe",
   "main": "index.js",
@@ -20,9 +20,9 @@
     "prettier": "^1.11.1"
   },
   "dependencies": {
-    "ffi-napi": "^2.4.3",
-    "ref-array": "^1.2.0",
-    "ref-struct": "^1.1.0"
+    "ffi-napi": "2.4.3",
+    "ref-array": "1.2.0",
+    "ref-struct": "1.1.0"
   },
   "homepage": "https://github.com/zeebe-io/zbc-js/#readme",
   "directories": {

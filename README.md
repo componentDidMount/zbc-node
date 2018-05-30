@@ -1,7 +1,7 @@
 # Zeebe NodeJs Client
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![Build Status](https://travis-ci.org/zeebe/zbc-js.svg?branch=master)](https://travis-ci.org/zeebe/zbc-js)
+[![Build Status](https://travis-ci.org/zeebe/zbc-node.svg?branch=master)](https://travis-ci.org/zeebe/zbc-node)
 
 Use NodeJs with Zeebe.
 
@@ -42,13 +42,13 @@ Use NodeJs with Zeebe.
 ## Installing
 
 ```js
-npm install -s zbc-nodejs
+npm install -s zbc-node
 ```
 
 Or
 
 ```js
-yarn add zbc-nodejs
+yarn add zbc-node
 ```
 
 ### Potential issues
@@ -59,7 +59,7 @@ ld: warning: could not create compact unwind for _ffi_call_unix64: does not use 
 ```
 You might want to run npm install with:
 ```
-LDFLAGS="-Wl,-no_compact_unwind" npm install -s zbc-nodejs
+LDFLAGS="-Wl,-no_compact_unwind" npm install -s zbc-node
 ```
 
 ## Get Started
@@ -120,13 +120,13 @@ npm init -y
 
 Now add the Zeebe NodeJS client dependecy:
 ```sh
-npm install -s zbc-nodejs
+npm install -s zbc-node
 ```
 
 Next, create a file, e.g. `deployWorkflow.js` and insert the following code:
 
 ```js
-const { Client } = require('zbc-nodejs')
+const { Client } = require('zbc-node')
 
 const zbClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
 
@@ -153,7 +153,7 @@ Result { error: '', data: {} }
 Next create a new file, e.g. `paymentService.js` and insert the following code:
 
 ```js
-const { Client } = require('zbc-nodejs')
+const { Client } = require('zbc-node')
 
 const zbClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
 zbClient.jobWorker('get-started', 'payment-service', {}, (jobKey, payload) => {
@@ -181,7 +181,7 @@ Leave this application running in the background because we want to see that our
 Next create a new file, e.g. `receiveOrders.js` and insert the following code:
 
 ```js
-const { Client } = require('zbc-nodejs')
+const { Client } = require('zbc-node')
 
 const zbClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
 
