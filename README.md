@@ -1,4 +1,4 @@
-# Zeebe NodeJs Client
+# Zeebe NodeJS Client
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Build Status](https://travis-ci.org/zeebe/zbc-node.svg?branch=master)](https://travis-ci.org/zeebe/zbc-node)
