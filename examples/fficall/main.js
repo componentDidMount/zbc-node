@@ -25,7 +25,7 @@ var GoString = Struct({
 
 var LongArray = ArrayType(ref.types.longlong);
 
-var zbc = ffi.Library("../../lib/obj/zbc.so", {
+var ffiInterface = {
     InitClient: ["string", [GoString]],
     CreateTopic: ["string", [GoString, "int", "int"]],
     CreateWorkflow: ["string", [GoString, GoString]],
@@ -34,7 +34,19 @@ var zbc = ffi.Library("../../lib/obj/zbc.so", {
     PollJob: ["string", ["int"]],
     CompleteJob: ["string", [GoString, GoString]],
     FailJob: ["string", [GoString]]
-});
+}
+
+var zbc = null; //ffi.Library("../../lib/obj/zbc.so", );
+
+if (process.platform === "win32") {
+    zbc = ffi.Library('../../lib/obj/libzbc-windows-4.0-amd64', ffiInterface)
+}
+
+if (process.platform === "darwin") {
+    zbc = ffi.Library('../../lib/obj/libzbc-darwin-10.6-amd64', ffiInterface)
+} else {
+    zbc = ffi.Library('../../lib/obj/libzbc-linux-amd64', ffiInterface)
+}
 
 console.log("Initializing client")
 var bootstrapAddr = "0.0.0.0:51015"
