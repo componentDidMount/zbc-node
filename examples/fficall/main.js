@@ -44,7 +44,9 @@ if (process.platform === "win32") {
 
 if (process.platform === "darwin") {
     zbc = ffi.Library('../../lib/obj/libzbc-darwin-10.6-amd64', ffiInterface)
-} else {
+} 
+
+if (process.platform === "linux") {
     zbc = ffi.Library('../../lib/obj/libzbc-linux-amd64', ffiInterface)
 }
 
