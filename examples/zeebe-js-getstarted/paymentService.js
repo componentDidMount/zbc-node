@@ -1,4 +1,4 @@
-const { Client } = require('zbc-nodejs')
+const { Client } = require('zbc-node')
 
 const zbClient = new Client({bootstrapAddr: '0.0.0.0:51015'})
 zbClient.jobWorker('get-started', 'payment-service', {}, (jobKey, payload) => {

@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zbc-nodejs": "file:../../"
+    "zbc-node": "file:../../"
   }
 }

@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "zbc-nodejs": "file:../../"
+    "zbc-node": "file:../../"
   }
 }

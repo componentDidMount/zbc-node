@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const { Client } = require("zbc-nodejs");
+const { Client } = require("zbc-node");
 
 const exampleClient = new Client({bootstrapAddr: "0.0.0.0:51015"});
 
