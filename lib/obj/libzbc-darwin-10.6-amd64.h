@@ -1,6 +1,6 @@
 /* Created by "go tool cgo" - DO NOT EDIT. */
 
-/* package command-line-arguments */
+/* package github.com/zeebe-io/libzbc */
 
 
 #line 1 "cgo-builtin-prolog"
@@ -71,7 +71,7 @@ extern char* CreateTopic(GoString p0, GoInt32 p1, GoInt32 p2);
 
 extern char* CreateWorkflow(GoString p0, GoString p1);
 
-extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt p2, GoString p3);
+extern char* CreateWorkflowInstance(GoString p0, GoString p1, GoInt32 p2, GoString p3);
 
 extern char* JobWorker(GoString p0, GoString p1, GoString p2, GoInt32 p3, GoInt32 p4);
 
