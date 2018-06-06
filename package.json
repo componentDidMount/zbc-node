@@ -1,6 +1,6 @@
 {
   "name": "zbc-node",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "NodeJS client for Zeebe",
   "main": "index.js",
   "scripts": {
