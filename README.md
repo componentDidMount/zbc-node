@@ -97,7 +97,7 @@ Windows users can double-click on the broker.bat file in the bin folder.
 
 Model a process in Zeebe Modeler that looks like this:
 
-![Order Process](./examples/zeebe-js-getstarted/order-process.png)
+![Order Process](https://github.com/zeebe-io/zbc-node/raw/master/examples/zeebe-js-getstarted/order-process.png)
 
 Make sure that the Service Task "Collect Money" has the Task Type "payment-service", the Serice Task "Fetch Items" the Task Type "inventory-service", and the Task "Ship Parcel" has Type "shipment-service".
 Also add Input Parameter $.orderId:$.orderId and Output Parameter $.totalPrice:$.totaPrice
